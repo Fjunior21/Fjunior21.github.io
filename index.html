@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang=it>
+	<head>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Farinaro Junior">
+		<meta name="description" content="Robot che si muove">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"> </script>
+        <title>Robot che si muove</title>
+		
+		<style>
+			html, body {
+			margin: 0;
+			padding: 0;
+			}
+			
+			canvas{
+			display: block;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<script>
+			function setup() {
+  createCanvas(700, 700);
+}
+
+function draw() {
+  //creo lo sfondo del robot
+  background(147,158,203);
+  //creo una linea verticale centrale
+  line(375,600,375,0);
+  //creo la testa del robot con un quadrato
+  fill (20,50,140)
+  square(mouseX-40,mouseY-150,100);
+  //creo il corpo del robot con un rettangolo
+  fill (20,90,140)
+  rect(mouseX-35,mouseY-50,90,200);
+  //creo la spalla sinistra del robot con una circonferenza
+  fill (60,55,200)
+  circle(mouseX-55,mouseY-40,40);
+  //creo la spalla destra del robot con una circonferenza
+  circle(mouseX+75,mouseY-40,40);
+  //creo il braccio sinistro del robot con un rettangolo
+  rect(mouseX-65,mouseY-30,20,100);
+  //creo il braccio destro del robot con rettangolo
+  rect(mouseX+65,mouseY-30,20,100)
+  //creo la gamba destra del robot con un rettangolo
+  rect(mouseX+15,mouseY+150,40,115);
+  //creo la gamba sinistra del robot con un rettangolo
+  rect(mouseX-35,mouseY+150,40,115);
+  //creo il piede sinistro del robot con un rettangolo
+  rect(mouseX-45,mouseY+240,50,25);
+  //creo il piede destro del robot con un rettangolo
+  rect(mouseX+5,mouseY+240,50,25);
+}
+			
+		</script>
+	</body>
+	
+</html>
