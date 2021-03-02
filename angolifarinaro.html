@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang=it>
+	<head>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Farinaro Junior">
+		<meta name="description" content="esercizio con angoli">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"> </script>
+        <title>angoli e cerchi</title>
+		
+		<style>
+			html, body {
+			margin: 0;
+			padding: 0;
+			}
+			
+			canvas{
+			display: block;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<script>
+			function setup() {
+			angleMode(DEGREES);
+			createCanvas(600, 600);
+			}
+			
+			function draw() {
+			background(220,50,135);
+			line(0,150,600,150)
+			//primo cerchio della prima riga
+			fill(50,120,120)
+			circle(60,80,50)
+			fill(60,220,30)
+			arc(60,80,50,50,0,30)
+			text("30°",55,120,50)
+			//secondo cerchio della prima riga
+			fill(50,120,120)
+			circle(120,80,50)
+			fill(60,220,30)
+			arc(120,80,50,50,0,45)
+			text("45°",115,120,50)
+			//terzo cerchio della prima riga
+			fill(50,120,120)
+			circle(180,80,50)
+			fill(60,220,30)
+			arc(180,80,50,50,0,60)
+			text("60°",175,120,50)
+			//quarto cerchio della prima riga
+			fill(50,120,120)
+			circle(240,80,50)
+			fill(60,220,30)
+			arc(240,80,50,50,0,90)
+			text("90°",235,120,50)
+			//quinto cerchio della prima riga
+			fill(50,120,120)
+			circle(300,80,50)
+			fill(60,220,30)
+			arc(300,80,50,50,0,180)
+			text("180°",295,120,50)
+			//sesto cercio della prima riga
+			fill(50,120,120)
+			circle(360,80,50)
+			fill(60,220,30)
+			arc(360,80,50,50,0,270)
+			text("270°",355,120,50)
+			//settimo cerchio della prima riga
+			fill(60,250,90)
+			circle(420,80,50)
+			fill(60,220,30)
+			arc(420,80,50,50,0,360)
+			text("360°",415,120,50)
+			//primo cerchio dlla seconda riga
+			fill(60,220,30)
+			circle(60,200,50)
+			fill(50,120,120)
+			arc(60,200,50,50,330,0)
+			text("30°",55,240,50)
+			//sesondo cerchio della seconda riga
+			fill(60,220,30)
+			circle(120,200,50)
+			fill(50,120,120)
+			arc(120,200,50,50,315,0)
+			text("45°",115,240,50)
+			//terzo cerchio della seconda riga
+			fill(60,220,30)
+			circle(180,200,50)
+			fill(50,120,120)
+			arc(180,200,50,50,300,0)
+			text("60°",175,240,50)
+			//quarto cerchio della seconda riga
+			fill(60,220,30)
+			circle(240,200,50)
+			fill(50,120,120)
+			arc(240,200,50,50,270,0)
+			text("90°",235,240,50)
+			//quinto cerchio della seconda riga
+			fill(60,220,30)
+			circle(300,200,50)
+			fill(50,120,120)
+			arc(300,200,50,50,180,0)
+			text("180°",290,240,50)
+			//sesto cerchio della seconda riga
+			fill(60,220,30)
+			circle(360,200,50)
+			fill(50,120,120)
+			arc(360,200,50,50,90,0)
+			text("270°",350,240,50)
+			//settimo cerchio della seconda riga
+			fill(60,220,30)
+			circle(420,200,50)
+			fill(50,120,120)
+			arc(420,200,50,50,360,0)
+			text("360°",410,240,50)
+			
+			
+			}	
+		</script>
+	</body>
+	
+</html>
