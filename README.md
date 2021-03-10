@@ -1,1 +1,2 @@
 # Fjunior21.github.io
+[![Validate HTML](https://github.com/Fjunior21/Fjunior21.github.io/actions/workflows/html-validate%20.yml/badge.svg)](https://github.com/Fjunior21/Fjunior21.github.io/actions/workflows/html-validate%20.yml)
