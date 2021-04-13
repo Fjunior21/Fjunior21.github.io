@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang=it>
+	<head>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Farinaro Junior">
+		<meta name="description" content="AlleyWey">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"> </script>
+        <title>gioco pallina</title>
+		
+		<style>
+			html, body {
+			margin: 0;
+			padding: 0;
+			}
+			
+			canvas{
+			display: block;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<script>
+			//dichiaro la variabile input
+			let input;
+			// dichiaro coordinataX delle palline
+			let PallinaX = [];
+			// dichiaro la coordinataY delle palline
+			let PallinaY = [];
+			// dichiaro l'indice dell'array
+			let i;
+			//dichiaro la coordinata rettangolo x
+			let rettangoloX;
+			//inizializzo il punteggio
+			let score=0;
+			
+			
+			function setup() {
+				//ripeto l'operazione per dare una coordinata Y casuale alle palline e moltiplico math.random per -1140 in modo da farle comparire sopra l'area da disegno
+				for(i=0;i<8;i++) {
+                    PallinaY[i]=Math.random() *-1140;
+					
+				}
+				
+				//ripeto l'operazione per dare una coordinata X casuale alle palline e moltiplico math.random per -990 in modo da farle comparire nei limiti dell'area da disegno
+				for(i=0;i<8;i++) {
+                    PallinaX[i]=Math.random() *990;
+					
+				}
+				//creo l'area da disegno
+				createCanvas(1000, 500);
+				
+				
+				
+			}
+			
+			function draw() {
+			//sfondo
+				background(150,50,210);
+				input=key;
+				//inserisco il menù come comparsa iniziale
+				if(input==""){
+					input="m";
+				}
+				//inizializzo lo switch
+				switch(input){
+					case "g":
+					//in un ciclo for inserisci circle per disegnare le palline
+					for(i=0;i<8;i++) {
+						circle(PallinaX[i],PallinaY[i],50);	
+					}
+					
+					//aumento la coordinataY della pallina di 1 ogni volta per farla cadere verso il basso
+					for(i=0;i<8;i++) {
+						PallinaY[i]=PallinaY[i]+3;
+					}
+					rettangoloX = mouseX-40;
+					//se coordinata x dell'angolo in alto a sinistra del rettangolo (rettangoloX) è <=0 allora rettangoloX assume valore 0 in modo che non superi l'area da disegno
+					if (rettangoloX <= 0) {
+						rettangoloX = 0;
+					}
+					//se coordinata x dell'angolo in alto a sinistra della racchetta (rettangoloX) è >=920 allora rettangoloX assume valore 920
+					if (rettangoloX >= 920) {
+						rettangoloX= 920;
+						
+					}			
+					
+					//creo il rettangolo (racchetta)
+					rect(rettangoloX,470,80,20);
+					fill(255,255,255);
+					//inserisco la condizione per far scomparie la pallina quando colpisce il rettangolo e farla riportare in alto
+					for(i=0;i<8;i++) {
+						if(PallinaY[i]>=450 && PallinaY[i]<=475){
+							if(PallinaX[i]<rettangoloX+100 && PallinaX[i]>rettangoloX-25 ){
+								PallinaY[i]=Math.random() *-1500;
+								PallinaX[i]=Math.random()*990;
+							}
+						}
+					}
+					//condizione per far rigenerare le palline se escono dall'area da disegno e non terminare il gioco 
+					for(i=0;i<8;i++) {
+						if(PallinaY[i]>520){
+							PallinaY[i]=Math.random() *-500;
+							PallinaX[i]=Math.random() *990;
+						}
+						}
+						break;
+						//caso p cioè la pausa
+						case "p":
+						fill(255,255,255);
+						textSize(50);
+						text("PARTITA TERMINATA",250,300);
+						
+						break;
+						//caso m cioe menù
+						case "m":
+						textSize(80);
+						text("ALLEYWEY",280,70);
+						fill(255,255,255);
+						textSize(50);
+						text("seleziona *G*",350,200);
+						text ("per iniziare a giocare",280,270);
+						text("termina partita",350,400);
+						break;				
+						}
+						
+					}
+		</script>
+	</body>
+</html>
